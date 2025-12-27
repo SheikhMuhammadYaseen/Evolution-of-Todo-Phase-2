@@ -1,0 +1,11 @@
+[project]
+name = "evolution-todo-phase1"
+version = "0.1.0"
+description = "Phase I CLI Todo Application - In-Memory Console App"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

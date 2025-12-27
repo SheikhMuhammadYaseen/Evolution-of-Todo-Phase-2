@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git fetch:*)",
+      "Bash(if [ -d \"specs\" ])",
+      "Bash(then ls -d specs/[0-9]*-phase1-cli-todo)",
+      "Bash(else echo \"No specs directory exists\")",
+      "Bash(fi)",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \".specify/scripts/powershell/create-new-feature.ps1\" -Json -Number 1 -ShortName \"phase1-cli-todo\" \"Create the Phase I specification for the Evolution of Todo project. Phase I Boundaries: Pure in-memory Python console application, single-user only, all data lost on program exit. Core Features: Add Task, View Task List, Update Task, Delete Task, Mark Task Complete/Incomplete. Task model: ID \\(auto-incremented integer\\), title \\(mandatory non-empty string\\), description \\(optional string\\), status \\(boolean complete/incomplete, defaults to incomplete\\). Console interaction: menu-driven with numbered choices 1-6 plus exit, clear input prompts. Acceptance criteria per feature. Error handling scenarios \\(invalid ID, empty list display, wrong menu choice\\). Strict Prohibitions: No database usage, no file persistence, no authentication, no web or API elements, no intermediate or advanced features \\(e.g., priorities, filters, due dates\\), no mention of future phases.\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"& ''.specify/scripts/powershell/create-new-feature.ps1'' -Json -Number 1 -ShortName ''phase1-cli-todo'' ''Create the Phase I specification for the Evolution of Todo project''\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -PathsOnly)",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json)",
+      "Bash(powershell.exe:*)",
+      "Bash(uv init:*)",
+      "Bash(python3 -m py_compile:*)",
+      "Bash(python:*)",
+      "Bash(if [ -f \".specify/scripts/bash/create-phr.sh\" ])",
+      "Bash(then echo \"Script exists\")",
+      "Bash(else echo \"Script not found\")",
+      "Bash(if [ -d \"history/prompts/constitution\" ])",
+      "Bash(then ls -1 history/prompts/constitution/*.prompt.md)",
+      "Bash(else echo \"0\")",
+      "Bash(ls -1 history/prompts/constitution/*.prompt.md)",
+      "Bash(then ls -d specs/[0-9]*-phase2-fullstack-web)",
+      "Bash(if [ -d \"history/prompts/002-phase2-fullstack-web\" ])",
+      "Bash(then ls -1 history/prompts/002-phase2-fullstack-web/*.prompt.md)",
+      "Bash(if [ -d \"specs/002-phase2-fullstack-web/checklists\" ])",
+      "Bash(then ls specs/002-phase2-fullstack-web/checklists/*.md)",
+      "Bash(venvScriptspip install -r requirements.txt)",
+      "Bash(./venv/Scripts/pip install:*)",
+      "Bash(openssl rand:*)",
+      "Bash(./venv/Scripts/python:*)",
+      "Bash(./venv/Scripts/uvicorn:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)"
+    ]
+  }
+}
