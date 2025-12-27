@@ -1,11 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { ApiClient } from '@/lib/api-client'
 import Link from 'next/link'
 
-export default function SigninPage() {
+function SigninForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [email, setEmail] = useState('')
@@ -115,5 +115,17 @@ export default function SigninPage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function SigninPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center bg-gray-50">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    }>
+      <SigninForm />
+    </Suspense>
   )
 }
